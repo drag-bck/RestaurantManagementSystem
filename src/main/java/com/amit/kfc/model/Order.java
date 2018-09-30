@@ -113,7 +113,24 @@ public class Order extends BaseModel {
 	
 	@Override
 	public String getWriteQuery() {
-		return null;
+		return "INSERT INTO "
+				+ ORDER_TABLE + " ("
+				+ ORDER_ID + ", "
+				+ ORDER_DATE + ", "
+				+ ORDER_CUSTOMER_NAME + ", "
+				+ ORDER_CUSTOMER_PHONE + ", "
+				+ ORDER_SELLER_ID + ", "
+				+ ORDER_SALE_TYPE + ", "
+				+ ORDER_AMOUNT + ", "
+				+ ") VALUES ("
+				+ this.getOrderId() + ", "
+				+ this.getDate() + ", "
+				+ this.getCustomerName() + ", "
+				+ this.getCustomerPhone() + ", "
+				+ this.getSellerId() + ", "
+				+ this.getSaleType() + ", "
+				+ this.getAmount()
+				+ ");";
 	}
 	
 	@Override

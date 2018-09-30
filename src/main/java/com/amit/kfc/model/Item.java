@@ -76,7 +76,18 @@ public class Item extends BaseModel {
 	
 	@Override
 	public String getWriteQuery() {
-		return null;
+		return "INSERT INTO "
+				+ ITEM_TABLE + " ("
+				+ ITEM_ID + ", "
+				+ ITEM_CAT + ", "
+				+ ITEM_NAME + ", "
+				+ ITEM_COST + ", "
+				+ ") VALUES ("
+				+ this.getItemId() + ", "
+				+ this.getCatId() + ", "
+				+ this.getName() + ", "
+				+ this.getCost()
+				+ ");";
 	}
 	
 	@Override
