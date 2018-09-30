@@ -14,7 +14,7 @@ public class UserController {
 		return Models.getInstance().getUsers();
 	}
 	
-	void addUser(String userName, String password) throws Exception {
+	public void addUser(String userName, String password) throws Exception {
 		if (userName == null)
 			throw new Exception("Username Required!");
 		userName = userName.trim();
@@ -48,7 +48,7 @@ public class UserController {
 		getUsers().add(user);
 	}
 	
-	void login(String userName, String password) throws Exception {
+	public void login(String userName, String password) throws Exception {
 		if (userName == null)
 			throw new Exception("Username Required!");
 		userName = userName.trim();
