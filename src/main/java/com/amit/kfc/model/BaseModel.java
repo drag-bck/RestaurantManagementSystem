@@ -1,7 +1,9 @@
 package com.amit.kfc.model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
+//TODO:Prepared Statement
 public abstract class BaseModel {
 	public abstract String getInitQuery();
 	
@@ -9,7 +11,7 @@ public abstract class BaseModel {
 	
 	public abstract void parse(ResultSet resultSet);
 	
-	public abstract String getWriteQuery();
+	public abstract PreparedStatement getWriteQuery(Connection connection) throws Exception;
 	
 	public abstract String getUpdateQuery();
 }

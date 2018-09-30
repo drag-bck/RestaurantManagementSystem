@@ -3,6 +3,7 @@ package com.amit.kfc.utils;
 import com.amit.kfc.model.BaseModel;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -25,20 +26,18 @@ public class ModelHelper {
 		return models;
 	}
 	
-	public static ResultSet executeQueryForResult(String query, Connection connection) {
+	public static ResultSet executeQueryForResult(PreparedStatement statement) {
 		try {
-			Statement statement = connection.createStatement();
-			return statement.executeQuery(query);
+			return statement.executeQuery();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public static boolean executeQuery(String query, Connection connection) {
+	public static boolean executeQuery(PreparedStatement statement) {
 		try {
-			Statement statement = connection.createStatement();
-			statement.execute(query);
+			statement.execute();
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();

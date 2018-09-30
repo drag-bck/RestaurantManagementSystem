@@ -1,5 +1,7 @@
 package com.amit.kfc.model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import static com.amit.kfc.model.Cols.*;
@@ -75,19 +77,22 @@ public class Item extends BaseModel {
 	}
 	
 	@Override
-	public String getWriteQuery() {
-		return "INSERT INTO "
+	public PreparedStatement getWriteQuery(Connection connection) throws Exception {
+		String query = "INSERT INTO "
 				+ ITEM_TABLE + " ("
 				+ ITEM_ID + ", "
 				+ ITEM_CAT + ", "
 				+ ITEM_NAME + ", "
 				+ ITEM_COST + ", "
-				+ ") VALUES ("
-				+ this.getItemId() + ", "
-				+ this.getCatId() + ", "
-				+ this.getName() + ", "
-				+ this.getCost()
-				+ ");";
+				+ ") VALUES (?, ?, ?, ?);";
+		
+		PreparedStatement statement = connection.prepareStatement(query);
+		statement.setInt(1, getItemId());
+		statement.setInt(2, getCatId());
+		statement.setString(3, getName());
+		statement.setFloat(4, getCost());
+		
+		return statement;
 	}
 	
 	@Override

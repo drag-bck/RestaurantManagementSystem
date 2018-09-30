@@ -1,5 +1,9 @@
 package com.amit.kfc.model;
 
+import com.amit.kfc.controller.Database;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import static com.amit.kfc.model.Cols.*;
@@ -52,15 +56,18 @@ public class Category extends BaseModel {
 	}
 	
 	@Override
-	public String getWriteQuery() {
-		return "INSERT INTO "
+	public PreparedStatement getWriteQuery(Connection connection) throws Exception{
+		String query = "INSERT INTO "
 				+ CATEGORY_TABLE + " ("
 				+ CATEGORY_ID + ", "
 				+ CATEGORY_NAME
-				+ ") VALUES ("
-				+ this.getCatId() + ", "
-				+ this.getName()
-				+ ");";
+				+ ") VALUES (? , ?);";
+		
+		PreparedStatement statement = connection.prepareStatement(query);
+		statement.setInt(1, getCatId());
+		statement.setString(2, getName());
+		
+		return statement;
 	}
 	
 	@Override

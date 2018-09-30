@@ -1,7 +1,9 @@
 package com.amit.kfc.model;
 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.Date;
 
 import static com.amit.kfc.model.Cols.*;
 
@@ -77,7 +79,7 @@ public class Order extends BaseModel {
 			this.setCustomerName(resultSet.getString(ORDER_CUSTOMER_NAME));
 			this.setCustomerPhone(resultSet.getString(ORDER_CUSTOMER_PHONE));
 			this.setSellerId(resultSet.getInt(ORDER_SELLER_ID));
-			this.setSaleType(SaleType.getSaleType(resultSet.getInt(ORDER_SALE_TYPE)));
+			this.setSaleType(SaleType.parse(resultSet.getInt(ORDER_SALE_TYPE)));
 			this.setAmount(resultSet.getFloat(ORDER_AMOUNT));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -112,8 +114,8 @@ public class Order extends BaseModel {
 	}
 	
 	@Override
-	public String getWriteQuery() {
-		return "INSERT INTO "
+	public PreparedStatement getWriteQuery(Connection connection) throws Exception {
+		String query = "INSERT INTO "
 				+ ORDER_TABLE + " ("
 				+ ORDER_ID + ", "
 				+ ORDER_DATE + ", "
@@ -122,15 +124,18 @@ public class Order extends BaseModel {
 				+ ORDER_SELLER_ID + ", "
 				+ ORDER_SALE_TYPE + ", "
 				+ ORDER_AMOUNT + ", "
-				+ ") VALUES ("
-				+ this.getOrderId() + ", "
-				+ this.getDate() + ", "
-				+ this.getCustomerName() + ", "
-				+ this.getCustomerPhone() + ", "
-				+ this.getSellerId() + ", "
-				+ this.getSaleType() + ", "
-				+ this.getAmount()
-				+ ");";
+				+ ") VALUES (?, ?, ?, ?, ?, ?, ?);";
+		
+		PreparedStatement statement = connection.prepareStatement(query);
+		statement.setInt(1, getOrderId());
+		statement.setDate(2, getDate());
+		statement.setString(3, getCustomerName());
+		statement.setString(4, getCustomerPhone());
+		statement.setInt(5, getSellerId());
+		statement.setInt(6, saleType.getValue());
+		statement.setFloat(7, getAmount());
+		
+		return statement;
 	}
 	
 	@Override

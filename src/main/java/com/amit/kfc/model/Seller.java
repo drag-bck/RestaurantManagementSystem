@@ -45,7 +45,7 @@ public class Seller extends BaseModel {
 	public void parse(ResultSet resultSet) {
 		try {
 			this.setSellerId(resultSet.getInt(SELLER_ID));
-			this.setSaleType(SaleType.getSaleType(resultSet.getInt(SELLER_SALE_TYPE)));
+			this.setSaleType(SaleType.parse(resultSet.getInt(SELLER_SALE_TYPE)));
 			this.setName(resultSet.getString(SELLER_NAME));
 			this.setRate(resultSet.getFloat(SELLER_RATE));
 		} catch (Exception e) {

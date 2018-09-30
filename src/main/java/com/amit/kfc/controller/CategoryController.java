@@ -3,6 +3,7 @@ package com.amit.kfc.controller;
 import com.amit.kfc.model.Category;
 import com.amit.kfc.utils.ModelHelper;
 
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class CategoryController {
@@ -29,8 +30,8 @@ public class CategoryController {
 		category.setCatId(id);
 		category.setName(name);
 		
-		String query = category.getWriteQuery();
-		if(!ModelHelper.executeQuery(query, Database.getConnection()))
+		PreparedStatement query = category.getWriteQuery(Database.getConnection());
+		if(!ModelHelper.executeQuery(query))
 			throw new Exception("Category creation Failed!");
 		
 		getCategories().add(category);
