@@ -50,6 +50,7 @@ public class User extends BaseModel {
 				+ USER_ID + " integer PRIMARY KEY, "
 				+ USER_NAME + " text, "
 				+ USER_PASSWORD + " text);";
+		//Todo: Unique Username
 	}
 	
 	@Override
@@ -64,7 +65,16 @@ public class User extends BaseModel {
 	
 	@Override
 	public String getWriteQuery() {
-		return null;
+		return "INSERT INTO "
+				+ USER_TABLE + " ("
+				+ USER_ID + ", "
+				+ USER_NAME + ", "
+				+ USER_PASSWORD
+				+ ") VALUES ("
+				+ this.getUserId() + ", "
+				+ this.getUserName() + ", "
+				+ this.getPassword()
+				+ ");";
 	}
 	
 	@Override
