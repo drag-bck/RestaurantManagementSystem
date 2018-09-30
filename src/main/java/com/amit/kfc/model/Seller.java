@@ -76,7 +76,18 @@ public class Seller extends BaseModel {
 	
 	@Override
 	public String getWriteQuery() {
-		return null;
+		return "INSERT INTO "
+				+ SELLER_TABLE + " ("
+				+ SELLER_ID + ", "
+				+ SELLER_NAME + ", "
+				+ SELLER_SALE_TYPE + ", "
+				+ SELLER_RATE
+				+ ") VALUES ("
+				+ this.getSellerId() + ", "
+				+ this.getName() + ", "
+				+ this.getSaleType() + ", "
+				+ this.getRate()
+				+ ");";
 	}
 	
 	@Override
