@@ -4,6 +4,7 @@ import com.amit.kfc.model.User;
 import com.amit.kfc.utils.Encryptor;
 import com.amit.kfc.utils.ModelHelper;
 
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class UserController {
@@ -40,8 +41,8 @@ public class UserController {
 		user.setPassword(encPassword);
 		user.setUserId(id);
 		
-		String query = user.getWriteQuery();
-		if (!ModelHelper.executeQuery(query, Database.getConnection()))
+		PreparedStatement query = user.getWriteQuery(Database.getConnection());
+		if (!ModelHelper.executeQuery(query))
 			throw new Exception("User Creation Failed");
 		
 		getUsers().add(user);

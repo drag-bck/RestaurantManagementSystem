@@ -1,7 +1,5 @@
 package com.amit.kfc.model;
 
-import com.amit.kfc.controller.Database;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -71,7 +69,7 @@ public class Category extends BaseModel {
 	}
 	
 	@Override
-	public String getUpdateQuery() {
+	public PreparedStatement getUpdateQuery() throws Exception {
 		return null;
 	}
 }

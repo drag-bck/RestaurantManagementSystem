@@ -4,6 +4,7 @@ import com.amit.kfc.model.SaleType;
 import com.amit.kfc.model.Seller;
 import com.amit.kfc.utils.ModelHelper;
 
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 public class SellerController {
@@ -32,8 +33,8 @@ public class SellerController {
 		seller.setSaleType(sellerSaleType);
 		seller.setRate(rate);
 		
-		String query = seller.getWriteQuery();
-		if (!ModelHelper.executeQuery(query, Database.getConnection()))
+		PreparedStatement query = seller.getWriteQuery(Database.getConnection());
+		if (!ModelHelper.executeQuery(query))
 			throw new Exception("Error Adding Seller");
 		
 		getSellers().add(seller);

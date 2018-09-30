@@ -13,5 +13,5 @@ public abstract class BaseModel {
 	
 	public abstract PreparedStatement getWriteQuery(Connection connection) throws Exception;
 	
-	public abstract String getUpdateQuery();
+	public abstract PreparedStatement getUpdateQuery() throws Exception;
 }

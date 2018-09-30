@@ -139,7 +139,7 @@ public class Order extends BaseModel {
 	}
 	
 	@Override
-	public String getUpdateQuery() {
+	public PreparedStatement getUpdateQuery() throws Exception {
 		return null;
 	}
 }
