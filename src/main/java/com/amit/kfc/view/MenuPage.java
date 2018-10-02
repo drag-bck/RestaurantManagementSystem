@@ -82,7 +82,6 @@ public class MenuPage extends javax.swing.JFrame {
 	
 	private void actionPerformed(ActionEvent event) {
 		String action = event.getActionCommand();
-		System.out.println(action);
 		switch (action) {
 			case "TAKE ORDER":
 				break;

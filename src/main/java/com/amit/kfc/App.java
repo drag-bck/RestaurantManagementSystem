@@ -1,7 +1,7 @@
 package com.amit.kfc;
 
 import com.amit.kfc.controller.Models;
-import com.amit.kfc.view.EditItem;
+import com.amit.kfc.view.LandingPage;
 
 import javax.swing.*;
 
@@ -10,6 +10,6 @@ public class App {
 		Models models = Models.getInstance();
 		models.init();
 		
-		SwingUtilities.invokeLater(() -> new EditItem().setVisible(true));
+		SwingUtilities.invokeLater(() -> new LandingPage().setVisible(true));
 	}
 }
