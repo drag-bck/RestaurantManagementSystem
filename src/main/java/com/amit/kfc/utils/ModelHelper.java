@@ -44,4 +44,25 @@ public class ModelHelper {
 			return false;
 		}
 	}
+	
+	public static ResultSet executeQueryForResult(String query, Connection connection) {
+		try {
+			Statement statement = connection.createStatement();
+			return statement.executeQuery(query);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public static boolean executeQuery(String query, Connection connection) {
+		try {
+			Statement statement = connection.createStatement();
+			statement.execute(query);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
 }

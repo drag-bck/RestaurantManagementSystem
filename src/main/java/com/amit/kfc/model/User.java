@@ -38,8 +38,8 @@ public class User extends BaseModel {
 	public void parse(ResultSet resultSet) {
 		try {
 			this.setUserId(resultSet.getInt(USER_ID));
-			this.setUserName(resultSet.getString(USER_PASSWORD));
-			this.setPassword(resultSet.getString(USER_NAME));
+			this.setUserName(resultSet.getString(USER_NAME));
+			this.setPassword(resultSet.getString(USER_PASSWORD));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -83,7 +83,12 @@ public class User extends BaseModel {
 	}
 	
 	@Override
-	public PreparedStatement getUpdateQuery() throws Exception {
+	public PreparedStatement getUpdateQuery(Connection connection) throws Exception {
+		return null;
+	}
+	
+	@Override
+	public PreparedStatement getDeleteStatement(Connection connection) throws Exception {
 		return null;
 	}
 }

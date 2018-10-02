@@ -139,7 +139,12 @@ public class Order extends BaseModel {
 	}
 	
 	@Override
-	public PreparedStatement getUpdateQuery() throws Exception {
+	public PreparedStatement getUpdateQuery(Connection connection) throws Exception {
+		return null;
+	}
+	
+	@Override
+	public PreparedStatement getDeleteStatement(Connection connection) throws Exception {
 		return null;
 	}
 }

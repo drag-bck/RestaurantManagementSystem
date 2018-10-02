@@ -3,18 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package kfc.gui;
+package com.amit.kfc.view;
+
+import com.toedter.calendar.JCalendar;
 
 /**
  *
  * @author Aman Kumar
  */
-public class generate_bill extends javax.swing.JFrame {
+public class GenerateBill extends javax.swing.JFrame {
 
     /**
-     * Creates new form generate_bill
+     * Creates new form GenerateBill
      */
-    public generate_bill() {
+    public GenerateBill() {
         initComponents();
     }
 
@@ -35,10 +37,9 @@ public class generate_bill extends javax.swing.JFrame {
         generateBill = new javax.swing.JButton();
         saleType = new javax.swing.JComboBox<>();
         sellerName = new javax.swing.JComboBox<>();
-        startDate = new datechooser.beans.DateChooserCombo();
-        endDate = new datechooser.beans.DateChooserCombo();
+        startDate = new JCalendar();
+        endDate = new JCalendar();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("GENERATE BILL");
         setMinimumSize(new java.awt.Dimension(640, 480));
 
@@ -67,7 +68,7 @@ public class generate_bill extends javax.swing.JFrame {
         sellerName.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Zomato", "Swiggy", "Pani Food", "Uer Eats", "Foodsome" }));
         sellerName.setPreferredSize(new java.awt.Dimension(200, 35));
 
-        startDate.setCurrentView(new datechooser.view.appearance.AppearancesList("Contrast",
+        /*startDate.setCurrentView(new datechooser.view.appearance.AppearancesList("Contrast",
             new datechooser.view.appearance.ViewAppearance("custom",
                 new datechooser.view.appearance.swing.SwingCellAppearance(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 11),
                     new java.awt.Color(0, 0, 0),
@@ -154,7 +155,7 @@ public class generate_bill extends javax.swing.JFrame {
             false,
             true)));
 endDate.setCalendarPreferredSize(new java.awt.Dimension(230, 175));
-endDate.setFieldFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));
+endDate.setFieldFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));*/
 
 javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 getContentPane().setLayout(layout);
@@ -230,26 +231,26 @@ layout.setHorizontalGroup(
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(generate_bill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerateBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(generate_bill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerateBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(generate_bill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerateBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(generate_bill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(GenerateBill.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new generate_bill().setVisible(true);
+                new GenerateBill().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private datechooser.beans.DateChooserCombo endDate;
+    private JCalendar endDate;
     private javax.swing.JButton generateBill;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -258,6 +259,6 @@ layout.setHorizontalGroup(
     private javax.swing.JLabel jLabel5;
     private javax.swing.JComboBox<String> saleType;
     private javax.swing.JComboBox<String> sellerName;
-    private datechooser.beans.DateChooserCombo startDate;
+    private JCalendar startDate;
     // End of variables declaration//GEN-END:variables
 }

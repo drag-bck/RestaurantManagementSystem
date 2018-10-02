@@ -83,7 +83,7 @@ public class Item extends BaseModel {
 				+ ITEM_ID + ", "
 				+ ITEM_CAT + ", "
 				+ ITEM_NAME + ", "
-				+ ITEM_COST + ", "
+				+ ITEM_COST
 				+ ") VALUES (?, ?, ?, ?);";
 		
 		PreparedStatement statement = connection.prepareStatement(query);
@@ -96,7 +96,31 @@ public class Item extends BaseModel {
 	}
 	
 	@Override
-	public PreparedStatement getUpdateQuery() throws Exception {
-		return null;
+	public PreparedStatement getUpdateQuery(Connection connection) throws Exception {
+		String query = "UPDATE "
+				+ ITEM_TABLE
+				+ " SET "
+				+ ITEM_COST
+				+ "= ? WHERE "
+				+ ITEM_ID + "= "
+				+ getItemId()
+				+ ";";
+		PreparedStatement statement = connection.prepareStatement(query);
+		statement.setFloat(1, getCost());
+		statement.setFloat(2, getItemId());
+		return statement;
+	}
+	
+	@Override
+	public PreparedStatement getDeleteStatement(Connection connection) throws Exception {
+		String query = "DELETE FROM "
+				+ ITEM_TABLE
+				+ " WHERE "
+				+ ITEM_ID
+				+ " = ?;";
+		PreparedStatement statement = connection.prepareStatement(query);
+		statement.setInt(1, getItemId());
+		
+		return statement;
 	}
 }

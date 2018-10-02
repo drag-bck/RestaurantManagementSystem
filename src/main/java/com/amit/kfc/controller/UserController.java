@@ -9,6 +9,10 @@ import java.util.ArrayList;
 
 public class UserController {
 	private static final String key = "12qw34ty67uj,.:'";
+	private static final int USER_NAME_MIN = 4;
+	private static final int USER_NAME_MAX = 8;
+	private static final int PASSWORD_MIN = 8;
+	private static final int PASSWORD_MAX = 16;
 	
 	public ArrayList<User> getUsers() {
 		return Models.getInstance().getUsers();
@@ -18,13 +22,13 @@ public class UserController {
 		if (userName == null)
 			throw new Exception("Username Required!");
 		userName = userName.trim();
-		if (userName.length() < 8)
+		if (userName.length() < USER_NAME_MIN)
 			throw new Exception("Username too short!");
-		if (userName.length() > 16)
+		if (userName.length() > USER_NAME_MAX)
 			throw new Exception("Username too long!");
-		if (password == null || password.length() < 8)
+		if (password == null || password.length() < PASSWORD_MIN)
 			throw new Exception("Password too short!");
-		if (password.length() > 16)
+		if (password.length() > PASSWORD_MAX)
 			throw new Exception("Password too long!");
 		
 		for (User user : getUsers()) {
@@ -49,16 +53,21 @@ public class UserController {
 	}
 	
 	public void login(String userName, String password) throws Exception {
+		if (getUsers().isEmpty()) {
+			addUser(userName, password);
+			return;
+		}
+		
 		if (userName == null)
 			throw new Exception("Username Required!");
 		userName = userName.trim();
-		if (userName.length() < 8)
+		if (userName.length() < USER_NAME_MIN)
 			throw new Exception("Username too short!");
-		if (userName.length() > 16)
+		if (userName.length() > USER_NAME_MAX)
 			throw new Exception("Username too long!");
-		if (password == null || password.length() < 8)
+		if (password == null || password.length() < PASSWORD_MIN)
 			throw new Exception("Password too short!");
-		if (password.length() > 16)
+		if (password.length() > PASSWORD_MAX)
 			throw new Exception("Password too long!");
 		
 		String encPassword = Encryptor.encrypt(key, password);

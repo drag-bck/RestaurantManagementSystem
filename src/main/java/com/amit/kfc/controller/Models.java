@@ -49,6 +49,7 @@ public class Models {
 	public void init() {
 		
 		try {
+			modelMap = new HashMap<>();
 			for (Class<? extends BaseModel> cls : modelList) {
 				BaseModel model = cls.newInstance();
 				

@@ -1,0 +1,25 @@
+package com.amit.kfc.utils;
+
+public class ComboHelper {
+	public static class ComboItem {
+		private int id;
+		private String description;
+		
+		public ComboItem(int id, String description) {
+			this.id = id;
+			this.description = description;
+		}
+		
+		public int getId() {
+			return id;
+		}
+		
+		public String getDescription() {
+			return description;
+		}
+		
+		public String toString() {
+			return description;
+		}
+	}
+}
