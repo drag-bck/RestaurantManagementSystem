@@ -52,9 +52,9 @@ public class GenerateBill extends javax.swing.JFrame {
         sellerName.setPreferredSize(new java.awt.Dimension(200, 35));
 
         startDate.setSize(230,175);
-        startDate.setFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));
+        startDate.setFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 24));
         endDate.setSize(230,175);
-        endDate.setFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));
+        endDate.setFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 24));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
