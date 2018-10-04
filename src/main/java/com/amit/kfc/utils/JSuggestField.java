@@ -102,6 +102,33 @@ public class JSuggestField<T> extends JTextField {
 		this.d.setFocusableWindowState(false);
 		this.d.setFocusable(false);
 		this.list = new JList<>();
+		this.list.addKeyListener(new KeyListener() {
+			private int selected;
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+			
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+			
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					if (this.selected == JSuggestField.this.list.getSelectedIndex()) {
+						JSuggestField.this.setText(JSuggestField.this.list.getSelectedValue().toString());
+						JSuggestField.this.lastChosenExistingVariable = JSuggestField.this.list.getSelectedValue().toString();
+						JSuggestField.this.fireActionEvent();
+						JSuggestField.this.d.setVisible(false);
+					}
+					
+					this.selected = JSuggestField.this.list.getSelectedIndex();
+				}
+			}
+		});
 		this.list.addMouseListener(new MouseListener() {
 			private int selected;
 			
@@ -110,7 +137,7 @@ public class JSuggestField<T> extends JTextField {
 			
 			public void mouseReleased(MouseEvent e) {
 				if (this.selected == JSuggestField.this.list.getSelectedIndex()) {
-					JSuggestField.this.setText((String) JSuggestField.this.list.getSelectedValue());
+					JSuggestField.this.setText(JSuggestField.this.list.getSelectedValue().toString());
 					JSuggestField.this.lastChosenExistingVariable = JSuggestField.this.list.getSelectedValue().toString();
 					JSuggestField.this.fireActionEvent();
 					JSuggestField.this.d.setVisible(false);

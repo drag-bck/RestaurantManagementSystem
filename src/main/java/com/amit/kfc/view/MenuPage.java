@@ -86,6 +86,7 @@ public class MenuPage extends javax.swing.JFrame {
 			case "TAKE ORDER":
 				break;
 			case "ORDER HISTORY":
+				new OrderHistory().setVisible(true);
 				break;
 			case "EDIT MENU":
 				new EditMenu().setVisible(true);

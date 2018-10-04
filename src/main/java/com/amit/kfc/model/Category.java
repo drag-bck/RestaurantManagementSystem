@@ -77,4 +77,9 @@ public class Category extends BaseModel {
 	public PreparedStatement getDeleteStatement(Connection connection) throws Exception {
 		return null;
 	}
+	
+	@Override
+	public String toString() {
+		return getName();
+	}
 }

@@ -36,13 +36,13 @@ public class AddItem extends javax.swing.JFrame {
 		setSize(new java.awt.Dimension(640, 480));
 		
 		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		jLabel1.setText("ComboItem Category");
+		jLabel1.setText("Item Category");
 		
 		jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		jLabel2.setText("ComboItem Name");
+		jLabel2.setText("Item Name");
 		
 		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		jLabel3.setText("ComboItem Cost");
+		jLabel3.setText("Item Cost");
 		
 		jLabel4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
 		jLabel4.setText("ADD ITEM IN MENU");
