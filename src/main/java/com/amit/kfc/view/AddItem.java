@@ -30,7 +30,7 @@ public class AddItem extends javax.swing.JFrame {
 		itemName = new javax.swing.JTextField();
 		itemCost = new javax.swing.JTextField();
 		addItem = new javax.swing.JButton();
-		jComboBox1 = new javax.swing.JComboBox(items);
+		jComboBox1 = new javax.swing.JComboBox<>(items);
 		
 		setMinimumSize(new java.awt.Dimension(640, 480));
 		setSize(new java.awt.Dimension(640, 480));
