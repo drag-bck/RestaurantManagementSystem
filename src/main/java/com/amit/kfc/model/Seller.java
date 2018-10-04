@@ -8,7 +8,6 @@ import static com.amit.kfc.model.Cols.*;
 
 public class Seller extends BaseModel {
 	private int sellerId;
-	private SaleType saleType;
 	private String name;
 	private float rate;
 	
@@ -18,14 +17,6 @@ public class Seller extends BaseModel {
 	
 	public void setSellerId(int sellerId) {
 		this.sellerId = sellerId;
-	}
-	
-	public SaleType getSaleType() {
-		return saleType;
-	}
-	
-	public void setSaleType(SaleType saleType) {
-		this.saleType = saleType;
 	}
 	
 	public String getName() {
@@ -47,7 +38,6 @@ public class Seller extends BaseModel {
 	public void parse(ResultSet resultSet) {
 		try {
 			this.setSellerId(resultSet.getInt(SELLER_ID));
-			this.setSaleType(SaleType.parse(resultSet.getInt(SELLER_SALE_TYPE)));
 			this.setName(resultSet.getString(SELLER_NAME));
 			this.setRate(resultSet.getFloat(SELLER_RATE));
 		} catch (Exception e) {
@@ -61,7 +51,6 @@ public class Seller extends BaseModel {
 				+ SELLER_TABLE + "("
 				+ SELLER_ID + " integer PRIMARY KEY, "
 				+ SELLER_NAME + " text, "
-				+ SELLER_SALE_TYPE + " integer, "
 				+ SELLER_RATE + " real);";
 	}
 	
@@ -70,7 +59,6 @@ public class Seller extends BaseModel {
 		return "SELECT "
 				+ SELLER_ID + ", "
 				+ SELLER_NAME + ", "
-				+ SELLER_SALE_TYPE + ", "
 				+ SELLER_RATE
 				+ " FROM "
 				+ SELLER_TABLE + ";";
@@ -82,15 +70,13 @@ public class Seller extends BaseModel {
 				+ SELLER_TABLE + " ("
 				+ SELLER_ID + ", "
 				+ SELLER_NAME + ", "
-				+ SELLER_SALE_TYPE + ", "
 				+ SELLER_RATE
 				+ ") VALUES (?, ?, ?, ?);";
 		
 		PreparedStatement statement = connection.prepareStatement(query);
 		statement.setInt(1, getSellerId());
 		statement.setString(2, getName());
-		statement.setInt(3, getSaleType().getValue());
-		statement.setFloat(4, getRate());
+		statement.setFloat(3, getRate());
 		
 		return statement;
 	}
