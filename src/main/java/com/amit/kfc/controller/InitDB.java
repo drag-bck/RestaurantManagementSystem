@@ -32,11 +32,11 @@ public class InitDB {
 		}
 	}
 	
-	public void readCategories() {
-		String csvFile = InitDB.class.getResource("/dataset/ItemCat.tsv").getPath();
+	private void readCategories() {
+		String csvFile = InitDB.class.getResource("/dataset/ItemCat.csv").getPath();
 		BufferedReader br = null;
 		String line;
-		String cvsSplitBy = "\t";
+		String cvsSplitBy = "\\|";
 		
 		try {
 			
@@ -59,11 +59,11 @@ public class InitDB {
 		}
 	}
 	
-	public void readItems() {
-		String csvFile = InitDB.class.getResource("/dataset/Items.tsv").getPath();
+	private void readItems() {
+		String csvFile = InitDB.class.getResource("/dataset/Items.csv").getPath();
 		BufferedReader br = null;
 		String line;
-		String cvsSplitBy = "\t";
+		String cvsSplitBy = "\\|";
 		
 		try {
 			

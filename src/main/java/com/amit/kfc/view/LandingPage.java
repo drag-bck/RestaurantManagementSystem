@@ -6,15 +6,23 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.net.URL;
 
-/**
- * @author Aman Kumar
- */
 public class LandingPage extends JFrame {
+	private JLabel jLabel1;
+	private JLabel jLabel2;
+	private JLabel jLabel3;
+	private JLabel jLabel4;
+	private JPanel jPanel1;
+	private JButton login;
+	private JPasswordField password;
+	private JTextField username;
+	
+	private UserController userController;
+	
 	public LandingPage() {
 		userController = new UserController();
 		initComponents();
 	}
-	//Todo: Check
+	
 	private void initComponents() {
 		jPanel1 = new JPanel();
 		username = new JTextField();
@@ -35,8 +43,9 @@ public class LandingPage extends JFrame {
 		jPanel1.add(username);
 		username.setBounds(300, 280, 160, 30);
 		
-		login.setText("LOGIN");
-		login.addActionListener((event) -> loginActionPerformed(event));
+		login.setActionCommand("LOGIN");
+		login.setText("Login");
+		login.addActionListener(this::loginActionPerformed);
 		jPanel1.add(login);
 		login.setBounds(240, 380, 140, 50);
 		
@@ -87,30 +96,15 @@ public class LandingPage extends JFrame {
 	}
 	
 	private void loginActionPerformed(ActionEvent event) {
-		String command = event.getActionCommand();
-		
-		if (command.equals("LOGIN")) {
-			String user = username.getText();
-			String pwd = password.getText();
-			try {
-				userController.login(user, pwd);
-				
-				dispose();
-				new MenuPage().setVisible(true);
-			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null, e.getMessage());
-			}
+		String user = username.getText();
+		String pwd = password.getText();
+		try {
+			userController.login(user, pwd);
+			
+			dispose();
+			new MenuPage().setVisible(true);
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 	}
-	
-	private JLabel jLabel1;
-	private JLabel jLabel2;
-	private JLabel jLabel3;
-	private JLabel jLabel4;
-	private JPanel jPanel1;
-	private JButton login;
-	private JPasswordField password;
-	private JTextField username;
-	
-	private UserController userController;
 }

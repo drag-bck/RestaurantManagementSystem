@@ -30,7 +30,7 @@ public class OrderController {
 		if (amount <= 0)
 			throw new Exception("Invalid Amount");
 		
-		int id = getOrders().isEmpty() ? 1 : getOrders().get(getOrders().size() - 1).getOrderId() + 1;
+		int id = getOrders().isEmpty() ? 1 : (getOrders().get(getOrders().size() - 1).getOrderId() + 1);
 		
 		Order order = new Order();
 		order.setOrderId(id);

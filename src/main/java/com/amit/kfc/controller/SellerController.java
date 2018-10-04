@@ -23,7 +23,7 @@ public class SellerController {
 		if (rate < 0 || rate > 100)
 			throw new Exception("Invalid Rate");
 		
-		int id = getSellers().isEmpty() ? 1 : getSellers().get(getSellers().size() - 1).getSellerId() + 1;
+		int id = getSellers().isEmpty() ? 1 : (getSellers().get(getSellers().size() - 1).getSellerId() + 1);
 		
 		Seller seller = new Seller();
 		seller.setSellerId(id);

@@ -1,12 +1,16 @@
 package com.amit.kfc.view;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 
-/**
- * @author Aman Kumar
- */
-public class MenuPage extends javax.swing.JFrame {
-	public MenuPage() {
+class MenuPage extends javax.swing.JFrame {
+	private JButton changeUser;
+	private JButton editMenu;
+	private JButton generateBill;
+	private JButton orderHistory;
+	private JButton takeOrder;
+	
+	MenuPage() {
 		initComponents();
 	}
 	
@@ -18,23 +22,28 @@ public class MenuPage extends javax.swing.JFrame {
 		changeUser = new javax.swing.JButton();
 		
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-		setTitle("MENU");
+		setTitle("Punjabi Chulha");
 		setMinimumSize(new java.awt.Dimension(640, 480));
 		
 		takeOrder.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		takeOrder.setLabel("TAKE ORDER");
+		takeOrder.setActionCommand("TAKE_ORDER");
+		takeOrder.setText("Take Order");
 		
 		orderHistory.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		orderHistory.setLabel("ORDER HISTORY");
+		orderHistory.setActionCommand("ORDER_HISTORY");
+		orderHistory.setText("Order History");
 		
 		editMenu.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		editMenu.setLabel("EDIT MENU");
+		editMenu.setActionCommand("EDIT_MENU");
+		editMenu.setText("Edit Menu");
 		
 		generateBill.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		generateBill.setLabel("GENERATE BILL");
+		generateBill.setActionCommand("GENERATE_BILL");
+		generateBill.setText("Generate Bill");
 		
 		changeUser.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		changeUser.setLabel("ADD USER");
+		changeUser.setActionCommand("ADD_USER");
+		changeUser.setText("Add User");
 		
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
@@ -71,11 +80,11 @@ public class MenuPage extends javax.swing.JFrame {
 								.addContainerGap(186, Short.MAX_VALUE))
 		);
 		
-		takeOrder.addActionListener((event) -> actionPerformed(event));
-		changeUser.addActionListener((event) -> actionPerformed(event));
-		editMenu.addActionListener((event) -> actionPerformed(event));
-		generateBill.addActionListener((event) -> actionPerformed(event));
-		orderHistory.addActionListener((event) -> actionPerformed(event));
+		takeOrder.addActionListener(this::actionPerformed);
+		changeUser.addActionListener(this::actionPerformed);
+		editMenu.addActionListener(this::actionPerformed);
+		generateBill.addActionListener(this::actionPerformed);
+		orderHistory.addActionListener(this::actionPerformed);
 		
 		pack();
 	}
@@ -83,26 +92,21 @@ public class MenuPage extends javax.swing.JFrame {
 	private void actionPerformed(ActionEvent event) {
 		String action = event.getActionCommand();
 		switch (action) {
-			case "TAKE ORDER":
+			case "TAKE_ORDER":
+				//Todo:Implement
 				break;
-			case "ORDER HISTORY":
+			case "ORDER_HISTORY":
 				new OrderHistory().setVisible(true);
 				break;
-			case "EDIT MENU":
+			case "EDIT_MENU":
 				new EditMenu().setVisible(true);
 				break;
-			case "GENERATE BILL":
+			case "GENERATE_BILL":
 				new GenerateBill().setVisible(true);
 				break;
-			case "ADD USER":
+			case "ADD_USER":
 				new AddUser().setVisible(true);
 				break;
 		}
 	}
-	
-	private javax.swing.JButton changeUser;
-	private javax.swing.JButton editMenu;
-	private javax.swing.JButton generateBill;
-	private javax.swing.JButton orderHistory;
-	private javax.swing.JButton takeOrder;
 }

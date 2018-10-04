@@ -38,7 +38,7 @@ public class UserController {
 		}
 		
 		String encPassword = Encryptor.encrypt(key, password);
-		int id = getUsers().isEmpty() ? 1 : getUsers().get(getUsers().size() - 1).getUserId() + 1;
+		int id = getUsers().isEmpty() ? 1 : (getUsers().get(getUsers().size() - 1).getUserId() + 1);
 		
 		User user = new User();
 		user.setUserName(userName);
