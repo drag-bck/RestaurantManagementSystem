@@ -12,6 +12,15 @@ public class Item extends BaseModel {
 	private String name;
 	private float cost;
 	
+	public Item() {
+	}
+	
+	public Item(String category, String name, String cost) {
+		catId = Integer.parseInt(category);
+		this.name = name;
+		this.cost = Float.parseFloat(cost);
+	}
+	
 	public int getItemId() {
 		return itemId;
 	}

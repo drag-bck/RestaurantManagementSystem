@@ -8,16 +8,22 @@ import com.toedter.calendar.JDateChooser;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Vector;
 import java.util.stream.Collectors;
 
-/**
- * @author Aman Kumar
- */
-public class GenerateBill extends javax.swing.JFrame {
+class GenerateBill extends JFrame {
+	private JDateChooser endDate;
+	private JButton generateBill;
+	private JLabel jLabel1;
+	private JLabel jLabel2;
+	private JLabel jLabel3;
+	private JLabel jLabel4;
+	private JComboBox sellerName;
+	private JDateChooser startDate;
 	
-	public GenerateBill() {
+	GenerateBill() {
 		initComponents();
 		
 		ArrayList<Seller> sellers = Models.getInstance().getSellers();
@@ -30,32 +36,32 @@ public class GenerateBill extends javax.swing.JFrame {
 	
 	private void initComponents() {
 		
-		jLabel1 = new javax.swing.JLabel();
-		jLabel2 = new javax.swing.JLabel();
-		jLabel3 = new javax.swing.JLabel();
-		jLabel4 = new javax.swing.JLabel();
-		generateBill = new javax.swing.JButton();
-		sellerName = new javax.swing.JComboBox();
+		jLabel1 = new JLabel();
+		jLabel2 = new JLabel();
+		jLabel3 = new JLabel();
+		jLabel4 = new JLabel();
+		generateBill = new JButton();
+		sellerName = new JComboBox();
 		startDate = new JDateChooser(new Date());
 		endDate = new JDateChooser(new Date());
 		
-		setTitle("GENERATE SALE INFORMATION");
+		setTitle("Sales Information");
 		setMinimumSize(new java.awt.Dimension(640, 480));
 		
 		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-		jLabel1.setText("GENERATE SALE INFORMATION");
+		jLabel1.setText("Generate Sales Information");
 		
 		jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		jLabel2.setText("START DATE");
+		jLabel2.setText("From");
 		
 		jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		jLabel3.setText("END DATE");
+		jLabel3.setText("To");
 		
 		jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		jLabel4.setText("SELLER");
+		jLabel4.setText("Seller");
 		
 		generateBill.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		generateBill.setText("GENERATE");
+		generateBill.setText("Generate");
 		generateBill.addActionListener(this::generateBillActionPerformed);
 		
 		sellerName.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -66,51 +72,51 @@ public class GenerateBill extends javax.swing.JFrame {
 		endDate.setBounds(20, 20, 200, 20);
 		endDate.setFont(new java.awt.Font("Tahoma", java.awt.Font.PLAIN, 14));
 		
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+		GroupLayout layout = new GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
 		layout.setHorizontalGroup(
-				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addGroup(layout.createSequentialGroup()
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+								.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
 										.addGroup(layout.createSequentialGroup()
 												.addGap(56, 56, 56)
 												.addComponent(jLabel1))
 										.addGroup(layout.createSequentialGroup()
 												.addGap(97, 97, 97)
-												.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 														.addComponent(jLabel4)
 														.addComponent(jLabel3)
 														.addComponent(jLabel2))
 												.addGap(81, 81, 81)
-												.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-														.addComponent(startDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(endDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-														.addComponent(sellerName, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+												.addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+														.addComponent(startDate, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+														.addComponent(endDate, GroupLayout.Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+														.addComponent(sellerName, GroupLayout.Alignment.LEADING, 0, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
 										.addGroup(layout.createSequentialGroup()
 												.addGap(169, 169, 169)
-												.addComponent(generateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+												.addComponent(generateBill, GroupLayout.PREFERRED_SIZE, 200, GroupLayout.PREFERRED_SIZE)))
 								.addContainerGap(147, Short.MAX_VALUE))
 		);
 		layout.setVerticalGroup(
-				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addGroup(layout.createSequentialGroup()
 								.addGap(20, 20, 20)
 								.addComponent(jLabel1)
 								.addGap(39, 39, 39)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+								.addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
 										.addGroup(layout.createSequentialGroup()
-												.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+												.addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
 														.addComponent(jLabel2)
-														.addComponent(startDate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+														.addComponent(startDate, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
 												.addGap(43, 43, 43)
 												.addComponent(jLabel3))
-										.addComponent(endDate, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addComponent(endDate, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
 								.addGap(27, 27, 27)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+								.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
 										.addComponent(jLabel4)
-										.addComponent(sellerName, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+										.addComponent(sellerName, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE))
 								.addGap(51, 51, 51)
-								.addComponent(generateBill, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addComponent(generateBill, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
 								.addContainerGap(94, Short.MAX_VALUE))
 		);
 		
@@ -120,17 +126,15 @@ public class GenerateBill extends javax.swing.JFrame {
 	private void generateBillActionPerformed(ActionEvent event) {
 		try {
 			Seller seller = (Seller) sellerName.getSelectedItem();
-			Date orderStartDate = startDate.getDate();
-			Date orderEndDate = endDate.getDate();
 			
-			java.sql.Date stDate = new java.sql.Date(orderStartDate.getYear(), orderStartDate.getMonth(), orderStartDate.getDay());
-			java.sql.Date eDate = new java.sql.Date(orderEndDate.getYear(), orderEndDate.getMonth(), orderEndDate.getDay());
+			java.sql.Date orderStartDate = dateToSqlDate(startDate.getDate());
+			java.sql.Date orderEndDate = dateToSqlDate(endDate.getDate());
 			
 			ArrayList<Order> orders = Models.getInstance()
 					.getOrders().stream()
 					.filter((order -> (order.getSellerId() == seller.getSellerId() &&
-							compareLessEqualDates(stDate, order.getDate()) &&
-							compareLessEqualDates(order.getDate(), eDate))))
+							compareLessEqualDates(orderStartDate, order.getDate()) &&
+							compareLessEqualDates(order.getDate(), orderEndDate))))
 					.collect(Collectors.toCollection(ArrayList::new));
 			
 			Vector<Vector<String>> data = orders.stream()
@@ -142,11 +146,7 @@ public class GenerateBill extends javax.swing.JFrame {
 			total.setAmount((float) orders.stream().collect(Collectors.summarizingDouble(Order::getAmount)).getSum());
 			data.add(total.toStringVector());
 			
-			Vector<String> columnNames = new Vector<>();
-			columnNames.add("Order Id");
-			columnNames.add("Customer");
-			columnNames.add("Phone");
-			columnNames.add("Amount");
+			Vector<String> columnNames = new Vector<>(Arrays.asList("Order Id", "Customer", "Phone", "Amount"));
 			
 			JFrame frame = new JFrame();
 			frame.setTitle("Order Summary: " + seller.getName());
@@ -159,19 +159,13 @@ public class GenerateBill extends javax.swing.JFrame {
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
-		Models.getInstance().init();
 	}
-	
-	private JDateChooser endDate;
-	private javax.swing.JButton generateBill;
-	private javax.swing.JLabel jLabel1;
-	private javax.swing.JLabel jLabel2;
-	private javax.swing.JLabel jLabel3;
-	private javax.swing.JLabel jLabel4;
-	private javax.swing.JComboBox sellerName;
-	private JDateChooser startDate;
 	
 	private boolean compareLessEqualDates(java.sql.Date start, java.sql.Date curr) {
 		return curr.getYear() >= start.getYear() && curr.getMonth() >= start.getMonth() && curr.getDate() >= start.getDate();
+	}
+	
+	private java.sql.Date dateToSqlDate(Date date) {
+		return new java.sql.Date(date.getYear(), date.getMonth(), date.getDay());
 	}
 }

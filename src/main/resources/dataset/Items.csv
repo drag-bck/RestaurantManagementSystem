@@ -1,248 +1,248 @@
-1,Rajma + Chawal,140
-1,Chole + Chawal,140
-1,Chole + Bhatura,100
-1,Fried Rice + Manchurian,150
-1,Amritsari Kulcha + Choley ,100
-1,Tawa Chaap + Lachha Paratha(2pc),150
-1,Dal Makhani + Lachha Paratha(2pc),150
-1,Paneer Butter Masala + Lachha Paratha(2pc),180
-1,Chaap + Chawal,150
-1,Paneer + Chawal,150
-2,Paneer Tikka,170
-2,Paneer Afghani Tikka,200
-2,Paneer Lemon Tikka,180
-2,Paneer Malai Tikka,210
-2,Paneer Achari Tikka,180
-2,Paneer Haryali Tikka,180
-2,Paneer Masala Tikka (Spicy),190
-2,Mushroom Tikka,210
-2,Tandoori Platter,250
-3,Masala Chaap (Spicy),180
-3,Afghani Chaap,200
-3,Lemon Chaap,190
-3,Malai Chaap,220
-3,Achari Chaap,185
-3,Haryali Chaap,185
-3,Chatpati Chaap,200
-3,Takatak Chaap,200
-3,Garlic Chaap,200
-3,Schezwan Chaap (Spicy),195
-3,Paneer Stuff Chaap,240
-3,Malai Stuff Chaap,250
-3,Cheese Stuff Chaap,280
-3,Soya Stick Chaap,240
-3,Chaap Platter,320
-4,French Fries,80
-4,Masala French Fries,100
-4,Peri-Peri French Fries,110
-4,Dry Manchurian,120
-4,Gravy Manchurian,140
-4,Garlic Manchurian,130
-4,Schezwaan Manchurian,130
-4,Cheese Manchurian,160
-4,Paneer Manchurian,150
-4,Golden Manchurian dry,180
-4,Mushroom Manchurian,160
-4,Mushroom Chilli,180
-4,Golden Fried Mushroom,200
-4,Paneer Triangle,190
-4,Paneer Chilli,170
-4,Paneer Chilli Gravy,180
-4,Golden Paneer Chilli,200
-4,Schezwan Paneer Chilli,180
-4,Chaap Paneer Chilli,190
-4,Chaap Chilli,180
-4,Veg Crispy,160
-4,Chinese Bhel,100
-4,Bombay Bhel,110
-4,Honey Chilli Potato,120
-4, Chilli Potato (Spicy),140
-4,Spl. Punjabi's Chilli Potato,160
-5,Plain Maggi,40
-5,Double Masala Maggi,50
-5,Butter Maggi,60
-5,Cheese Maggi,80
-5,Mixed Veg Maggi,70
-5,Schezwan Maggi,60
-5,Tadka Maggi,70
-5,Veg Butter Cheese Tadka Maggi,100
-5,Soupy Maggi,50
-5,Sweet Corn Maggi,80
-6,Veg Momos,80
-6,Paneer Momos,120
-6,Fried Momos,100
-6,Spl. Gravy Momos,170
-6,Tandoori Momos,160
-7,PavBhaji,110
-7,Butter PavBhaji,130
-7,Masala PavBhaji,140
-7,Green PavBhaji,130
-7,Cheese PavBhaji,150
-7,Paneer PavBhaji,140
-7,Paneer Tukda PavBhaji,160
-8,Veg Soup,100
-8,Manchow Soup,80
-8,Hot 'n Sour Soup,90
-8,Sweet Corn Soup,120
-8,Lemon Pepper Soup,90
-8,Tomato Soup,90
-8,Manchow Gravy Paneer Soup,120
-9,Shahi Paneer,180
-9,Kadhai Paneer (Spicy),170
-9,Tawa Paneer,190
-9,Paneer Butter Masala,180
-9,Paneer Tikka Butter Masala (Spicy),200
-9,Paneer Balti,185
-9,Palak Paneer,190
-9,Paneer Navarattan,230
-9,Paneer Korma,210
-9,Paneer Angara,210
-9,Paneer Toofani,195
-9,Paneer Lababdar,190
-9,Paneer Handi,195
-9,Paneer Makhani,220
-9,Paneer Mushroom,210
-9,Paneer Diwani Handi (CHEF Spl.),220
-9,Paneer Pasanda,200
-9,Paneer Takatak,210
-9,Mutter paneer,160
-9,Kolhapuri Paneer,180
-9,Hyderabadi Paneer,190
-9,Cheese Tomato,280
-9,Cheese Butter Masala (Spicy),240
-9,Cheese Paneer Masala,250
-9,Cheese Angoori,240
-9,Cheese Mushroom Masala,220
-9,Mutter Mushroom,160
-9,Kaju Paneer Masala,190
-9,Kaju Curry,180
-9,Kaju Kofta,220
-9,Malai Kofta,200
-9,Stuffed Capsicum,180
-9,Stuffed Tomato,170
-9,Mix Veg,160
-9,Veg Handi,180
-9,Veg Diwani Handi,200
-9,Veg Kolhapuri,190
-9,Veg Angara,200
-9,Veg Korma,180
-9,Veg Mushroom,190
-9,Sev Tomato,140
-9,Sev Cheese Tomato,160
-9,Chana Masala,140
-9,RawalPindi Chana,170
-9,Dum Aloo,150
-9,Jeera Aloo,130
-9,Aloo mutter,130
-9,Shahi Chaap,180
-9,Tawa Chaap,190
-9,Lemon Chaap Gravy,200
-9,Malai Chaap Gravy,220
-9,Kali Mirch Chaap,230
-9,Kadai Chaap (Spicy),210
-9,Chaap Curry,220
-9,Chaap Bhurji,200
-10,Dal Fry,100
-10,Dal Tadka,120
-10,Dal Double Tadka,130
-10,Dal Handi,120
-10,Dal Makhani,150
-10,Dhabe Ki Dal,120
-11,Tandoori Plain Roti,10
-11,Tandoori Butter Roti,15
-11,Tawa Plain Roti,15
-11,Tawa Butter Roti,20
-11,Ajwain Roti,30
-11,Onion Roti,30
-11,Onion Missy Roti,50
-11,Missy Roti,40
-11,Plain Naan,30
-11,Butter Naan,40
-11,Aloo Naan,60
-11,Chur Chur Naan,80
-11,Stuff Naan,80
-11,Garlic Naan,50
-11,Cheese Naan,110
-11,Cheese Garlic Naan,120
-11,Amritsari Naan,70
-11,Paneer Naan,70
-12,Onion Paratha,70
-12,Aloo Paratha,70
-12,Mirchi Paratha,70
-12,Gobhi Paratha,80
-12,Sada Tawa Paratha,50
-12,Sada Tawa Butter Paratha,60
-12,Paneer Paratha,100
-12,Mix Veg Paratha,110
-12,Mix Paratha,100
-12,Cheese Paratha,130
-12,Sugar Paratha (Cheeni),100
-12,Lachha Paratha,60
-13,Amritsari Kulcha(with Choley gravy),100
-13,Butter Kulcha,60
-13,Onion Kulcha,70
-14,Plain Rice,90
-14,Steamed Rice,90
-14,Jeera Rice,100
-14,Paneer Rice,120
-14,Mutter Rice,120
-14,Lemon Rice,110
-14,Singapuri Rice,130
-14,Veg Pulao,140
-14,Paneer Pulao,150
-14,Cheese Pulao,170
-14,Tawa Pulao,160
-14,Kashmiri Pulao,150
-14,Hyderabadi Pulao,160
-14,Green Pulao,170
-14,Veg Biryani,160
-14,Cheese Biryani,200
-14,Paneer Biryani,190
-14,Chaap Biryani,210
-14,Dum Biryani,200
-15,Fried Rice,150
-15,Schezwaan Fried Rice,160
-15,Chilli Garlic Rice,160
-15,Veg Triple Rice,180
-15,Mushroom Rice,180
-15,Manchurian Rice,190
-15,Chef's Spl. Rice,210
-15,Veg Noodles,120
-15,Cheese Noodles,160
-15,Singapuri Noodles,140
-15,Schezwaan Noodles,130
-15,Hakka Noodles,140
-15,Chilli Garlic Noodles,120
-15,Paneer Noodles,150
-15,Veg Choupsey,130
-15,Cheese Choupsey,160
-15,Mushroom Choupsey,150
-15,Singapuri Choupsey,140
-16,Plain Curd,40
-16,Jeera Curd,50
-16,Mixed Raita,60
-16,Boondi Raita,50
-16,Pineapple Raita,80
-16,Green Salad,50
-16,Kachumber Salad (Creamy),60
-16,Tomato Salad,60
-16,Onion Salad,40
-17,Dry Papd,15
-17,Fry Papad,20
-17,Masala Papad,40
-17,Paneer Masala Papad,50
-17,Cheese Masala Papad,60
-18,Chaaj (BUTTER MILK),50
-18,Namkeen Lassi,60
-18,Punjabi Lassi,70
-18,Dry Fruit Lassi,100
-18,Spl. Vrindavan Lassi,110
-19,Rasgulla / Gulabjamun,20
-19,Kheer (Punjabi),70
-20,Mineral Water (1L),20
-20,Coke (600 ml),50
-20,Sprite (600 ml),50
-20,Thumps Up (600 ml),50
-20,Maaza (600 ml),50
-20,Fanta (600 ml),50
-20,Limca (600 ml),50
+1|Rajma + Chawal|140
+1|Chole + Chawal|140
+1|Chole + Bhatura|100
+1|Fried Rice + Manchurian|150
+1|Amritsari Kulcha + Choley| 100
+1|Tawa Chaap + Lachha Paratha(2pc)|150
+1|Dal Makhani + Lachha Paratha(2pc)|150
+1|Paneer Butter Masala + Lachha Paratha(2pc)|180
+1|Chaap + Chawal|150
+1|Paneer + Chawal|150
+2|Paneer Tikka|170
+2|Paneer Afghani Tikka|200
+2|Paneer Lemon Tikka|180
+2|Paneer Malai Tikka|210
+2|Paneer Achari Tikka|180
+2|Paneer Haryali Tikka|180
+2|Paneer Masala Tikka (Spicy)|190
+2|Mushroom Tikka|210
+2|Tandoori Platter|250
+3|Masala Chaap (Spicy)|180
+3|Afghani Chaap|200
+3|Lemon Chaap|190
+3|Malai Chaap|220
+3|Achari Chaap|185
+3|Haryali Chaap|185
+3|Chatpati Chaap|200
+3|Takatak Chaap|200
+3|Garlic Chaap|200
+3|Schezwan Chaap (Spicy)|195
+3|Paneer Stuff Chaap|240
+3|Malai Stuff Chaap|250
+3|Cheese Stuff Chaap|280
+3|Soya Stick Chaap|240
+3|Chaap Platter|320
+4|French Fries|80
+4|Masala French Fries|100
+4|Peri-Peri French Fries|110
+4|Dry Manchurian|120
+4|Gravy Manchurian|140
+4|Garlic Manchurian|130
+4|Schezwaan Manchurian|130
+4|Cheese Manchurian|160
+4|Paneer Manchurian|150
+4|Golden Manchurian dry|180
+4|Mushroom Manchurian|160
+4|Mushroom Chilli|180
+4|Golden Fried Mushroom|200
+4|Paneer Triangle|190
+4|Paneer Chilli|170
+4|Paneer Chilli Gravy|180
+4|Golden Paneer Chilli|200
+4|Schezwan Paneer Chilli|180
+4|Chaap Paneer Chilli|190
+4|Chaap Chilli|180
+4|Veg Crispy|160
+4|Chinese Bhel|100
+4|Bombay Bhel|110
+4|Honey Chilli Potato|120
+4| Chilli Potato (Spicy)|140
+4|Spl. Punjabi's Chilli Potato|160
+5|Plain Maggi|40
+5|Double Masala Maggi|50
+5|Butter Maggi|60
+5|Cheese Maggi|80
+5|Mixed Veg Maggi|70
+5|Schezwan Maggi|60
+5|Tadka Maggi|70
+5|Veg Butter Cheese Tadka Maggi|100
+5|Soupy Maggi|50
+5|Sweet Corn Maggi|80
+6|Veg Momos|80
+6|Paneer Momos|120
+6|Fried Momos|100
+6|Spl. Gravy Momos|170
+6|Tandoori Momos|160
+7|PavBhaji|110
+7|Butter PavBhaji|130
+7|Masala PavBhaji|140
+7|Green PavBhaji|130
+7|Cheese PavBhaji|150
+7|Paneer PavBhaji|140
+7|Paneer Tukda PavBhaji|160
+8|Veg Soup|100
+8|Manchow Soup|80
+8|Hot 'n Sour Soup|90
+8|Sweet Corn Soup|120
+8|Lemon Pepper Soup|90
+8|Tomato Soup|90
+8|Manchow Gravy Paneer Soup|120
+9|Shahi Paneer|180
+9|Kadhai Paneer (Spicy)|170
+9|Tawa Paneer|190
+9|Paneer Butter Masala|180
+9|Paneer Tikka Butter Masala (Spicy)|200
+9|Paneer Balti|185
+9|Palak Paneer|190
+9|Paneer Navarattan|230
+9|Paneer Korma|210
+9|Paneer Angara|210
+9|Paneer Toofani|195
+9|Paneer Lababdar|190
+9|Paneer Handi|195
+9|Paneer Makhani|220
+9|Paneer Mushroom|210
+9|Paneer Diwani Handi (CHEF Spl.)|220
+9|Paneer Pasanda|200
+9|Paneer Takatak|210
+9|Mutter paneer|160
+9|Kolhapuri Paneer|180
+9|Hyderabadi Paneer|190
+9|Cheese Tomato|280
+9|Cheese Butter Masala (Spicy)|240
+9|Cheese Paneer Masala|250
+9|Cheese Angoori|240
+9|Cheese Mushroom Masala|220
+9|Mutter Mushroom|160
+9|Kaju Paneer Masala|190
+9|Kaju Curry|180
+9|Kaju Kofta|220
+9|Malai Kofta|200
+9|Stuffed Capsicum|180
+9|Stuffed Tomato|170
+9|Mix Veg|160
+9|Veg Handi|180
+9|Veg Diwani Handi|200
+9|Veg Kolhapuri|190
+9|Veg Angara|200
+9|Veg Korma|180
+9|Veg Mushroom|190
+9|Sev Tomato|140
+9|Sev Cheese Tomato|160
+9|Chana Masala|140
+9|RawalPindi Chana|170
+9|Dum Aloo|150
+9|Jeera Aloo|130
+9|Aloo mutter|130
+9|Shahi Chaap|180
+9|Tawa Chaap|190
+9|Lemon Chaap Gravy|200
+9|Malai Chaap Gravy|220
+9|Kali Mirch Chaap|230
+9|Kadai Chaap (Spicy)|210
+9|Chaap Curry|220
+9|Chaap Bhurji|200
+10|Dal Fry|100
+10|Dal Tadka|120
+10|Dal Double Tadka|130
+10|Dal Handi|120
+10|Dal Makhani|150
+10|Dhabe Ki Dal|120
+11|Tandoori Plain Roti|10
+11|Tandoori Butter Roti|15
+11|Tawa Plain Roti|15
+11|Tawa Butter Roti|20
+11|Ajwain Roti|30
+11|Onion Roti|30
+11|Onion Missy Roti|50
+11|Missy Roti|40
+11|Plain Naan|30
+11|Butter Naan|40
+11|Aloo Naan|60
+11|Chur Chur Naan|80
+11|Stuff Naan|80
+11|Garlic Naan|50
+11|Cheese Naan|110
+11|Cheese Garlic Naan|120
+11|Amritsari Naan|70
+11|Paneer Naan|70
+12|Onion Paratha|70
+12|Aloo Paratha|70
+12|Mirchi Paratha|70
+12|Gobhi Paratha|80
+12|Sada Tawa Paratha|50
+12|Sada Tawa Butter Paratha|60
+12|Paneer Paratha|100
+12|Mix Veg Paratha|110
+12|Mix Paratha|100
+12|Cheese Paratha|130
+12|Sugar Paratha (Cheeni)|100
+12|Lachha Paratha|60
+13|Amritsari Kulcha(with Choley gravy)|100
+13|Butter Kulcha|60
+13|Onion Kulcha|70
+14|Plain Rice|90
+14|Steamed Rice|90
+14|Jeera Rice|100
+14|Paneer Rice|120
+14|Mutter Rice|120
+14|Lemon Rice|110
+14|Singapuri Rice|130
+14|Veg Pulao|140
+14|Paneer Pulao|150
+14|Cheese Pulao|170
+14|Tawa Pulao|160
+14|Kashmiri Pulao|150
+14|Hyderabadi Pulao|160
+14|Green Pulao|170
+14|Veg Biryani|160
+14|Cheese Biryani|200
+14|Paneer Biryani|190
+14|Chaap Biryani|210
+14|Dum Biryani|200
+15|Fried Rice|150
+15|Schezwaan Fried Rice|160
+15|Chilli Garlic Rice|160
+15|Veg Triple Rice|180
+15|Mushroom Rice|180
+15|Manchurian Rice|190
+15|Chef's Spl. Rice|210
+15|Veg Noodles|120
+15|Cheese Noodles|160
+15|Singapuri Noodles|140
+15|Schezwaan Noodles|130
+15|Hakka Noodles|140
+15|Chilli Garlic Noodles|120
+15|Paneer Noodles|150
+15|Veg Choupsey|130
+15|Cheese Choupsey|160
+15|Mushroom Choupsey|150
+15|Singapuri Choupsey|140
+16|Plain Curd|40
+16|Jeera Curd|50
+16|Mixed Raita|60
+16|Boondi Raita|50
+16|Pineapple Raita|80
+16|Green Salad|50
+16|Kachumber Salad (Creamy)|60
+16|Tomato Salad|60
+16|Onion Salad|40
+17|Dry Papd|15
+17|Fry Papad|20
+17|Masala Papad|40
+17|Paneer Masala Papad|50
+17|Cheese Masala Papad|60
+18|Chaaj (BUTTER MILK)|50
+18|Namkeen Lassi|60
+18|Punjabi Lassi|70
+18|Dry Fruit Lassi|100
+18|Spl. Vrindavan Lassi|110
+19|Rasgulla / Gulabjamun|20
+19|Kheer (Punjabi)|70
+20|Mineral Water (1L)|20
+20|Coke (600 ml)|50
+20|Sprite (600 ml)|50
+20|Thumps Up (600 ml)|50
+20|Maaza (600 ml)|50
+20|Fanta (600 ml)|50
+20|Limca (600 ml)|50

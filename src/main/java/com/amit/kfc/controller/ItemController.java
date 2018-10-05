@@ -28,13 +28,24 @@ public class ItemController {
 			throw new Exception("Invalid Price");
 		
 		
-		int id = getItems().isEmpty() ? 1 : getItems().get(getItems().size() - 1).getItemId();
+		int id = getItems().isEmpty() ? 1 : (getItems().get(getItems().size() - 1).getItemId() + 1);
 		
 		Item item = new Item();
 		item.setItemId(id);
 		item.setName(name);
 		item.setCatId(category);
 		item.setCost(cost);
+		
+		PreparedStatement query = item.getWriteQuery(Database.getConnection());
+		if (!ModelHelper.executeQuery(query))
+			throw new Exception("ComboItem creation Failed!");
+		
+		getItems().add(item);
+	}
+	
+	public void addItem(Item item) throws Exception {
+		int id = getItems().isEmpty() ? 1 : (getItems().get(getItems().size() - 1).getItemId() + 1);
+		item.setItemId(id);
 		
 		PreparedStatement query = item.getWriteQuery(Database.getConnection());
 		if (!ModelHelper.executeQuery(query))
@@ -51,7 +62,7 @@ public class ItemController {
 		}
 	}
 	
-	public void updateItem(int itemId, float cost) throws Exception{
+	public void updateItem(int itemId, float cost) throws Exception {
 		Item item = new Item();
 		item.setItemId(itemId);
 		item.setCost(cost);

@@ -10,6 +10,14 @@ public class Category extends BaseModel {
 	private int catId;
 	private String name;
 	
+	public Category() {
+	}
+	
+	public Category(String id, String name) {
+		catId = Integer.parseInt(id);
+		this.name = name;
+	}
+	
 	public int getCatId() {
 		return catId;
 	}
@@ -54,7 +62,7 @@ public class Category extends BaseModel {
 	}
 	
 	@Override
-	public PreparedStatement getWriteQuery(Connection connection) throws Exception{
+	public PreparedStatement getWriteQuery(Connection connection) throws Exception {
 		String query = "INSERT INTO "
 				+ CATEGORY_TABLE + " ("
 				+ CATEGORY_ID + ", "

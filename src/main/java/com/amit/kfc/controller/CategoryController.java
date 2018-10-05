@@ -24,14 +24,22 @@ public class CategoryController {
 			}
 		}
 		
-		int id = getCategories().isEmpty() ? 1 : getCategories().get(getCategories().size() - 1).getCatId();
+		int id = getCategories().isEmpty() ? 1 : (getCategories().get(getCategories().size() - 1).getCatId() + 1);
 		
 		Category category = new Category();
 		category.setCatId(id);
 		category.setName(name);
 		
 		PreparedStatement query = category.getWriteQuery(Database.getConnection());
-		if(!ModelHelper.executeQuery(query))
+		if (!ModelHelper.executeQuery(query))
+			throw new Exception("Category creation Failed!");
+		
+		getCategories().add(category);
+	}
+	
+	public void addCategory(Category category) throws Exception {
+		PreparedStatement query = category.getWriteQuery(Database.getConnection());
+		if (!ModelHelper.executeQuery(query))
 			throw new Exception("Category creation Failed!");
 		
 		getCategories().add(category);

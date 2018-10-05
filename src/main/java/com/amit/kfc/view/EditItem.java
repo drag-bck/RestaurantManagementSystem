@@ -2,7 +2,8 @@ package com.amit.kfc.view;
 
 import com.amit.kfc.controller.ItemController;
 import com.amit.kfc.controller.Models;
-import com.amit.kfc.utils.ComboHelper;
+import com.amit.kfc.model.Category;
+import com.amit.kfc.model.Item;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,15 +11,23 @@ import java.awt.event.ItemEvent;
 import java.util.Vector;
 import java.util.stream.Collectors;
 
-/**
- * @author Aman Kumar
- */
-public class EditItem extends javax.swing.JFrame {
-	public EditItem() {
-		categoryItems = Models.getInstance()
-				.getCategories().stream()
-				.map(category -> new ComboHelper.ComboItem(category.getCatId(), category.getName()))
-				.collect(Collectors.toCollection(Vector::new));
+class EditItem extends JFrame {
+	private JButton jButton1;
+	private JComboBox itemCat;
+	private JLabel jLabel1;
+	private JLabel jLabel2;
+	private JLabel jLabel3;
+	private JList<Item> itemList;
+	private JScrollPane jScrollPane1;
+	private JTextField jTextField1;
+	
+	private Vector<Category> categoryItems;
+	private DefaultListModel<Item> itemModel;
+	
+	private ItemController itemController;
+	
+	EditItem() {
+		categoryItems = new Vector<>(Models.getInstance().getCategories());
 		
 		itemController = new ItemController();
 		initComponents();
@@ -26,26 +35,26 @@ public class EditItem extends javax.swing.JFrame {
 	
 	private void initComponents() {
 		
-		jLabel1 = new javax.swing.JLabel();
-		jButton1 = new javax.swing.JButton();
-		itemCat = new javax.swing.JComboBox<>(categoryItems);
-		jScrollPane1 = new javax.swing.JScrollPane();
-		itemList = new javax.swing.JList<>();
-		jLabel2 = new javax.swing.JLabel();
-		jLabel3 = new javax.swing.JLabel();
-		jTextField1 = new javax.swing.JTextField();
+		jLabel1 = new JLabel();
+		jButton1 = new JButton();
+		itemCat = new JComboBox<>(categoryItems);
+		jScrollPane1 = new JScrollPane();
+		itemList = new JList<>();
+		jLabel2 = new JLabel();
+		jLabel3 = new JLabel();
+		jTextField1 = new JTextField();
 		
-		setTitle("EDIT ITEM PRICE");
+		setTitle("Edit Item Price");
 		setMinimumSize(new java.awt.Dimension(640, 480));
 		
 		jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-		jLabel1.setText("EDIT ITEM PRICE");
+		jLabel1.setText("Edit Item Price");
 		
 		jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		jButton1.setText("CHANGE PRICE");
+		jButton1.setText("Change Price");
 		
 		itemCat.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-		itemCat.addItemListener((event) -> categoryChanged(event));
+		itemCat.addItemListener(this::categoryChanged);
 		
 		jScrollPane1.setViewportView(itemList);
 		
@@ -57,60 +66,62 @@ public class EditItem extends javax.swing.JFrame {
 		
 		jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
 		
-		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+		itemList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		
+		GroupLayout layout = new GroupLayout(getContentPane());
 		getContentPane().setLayout(layout);
 		layout.setHorizontalGroup(
-				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addGroup(layout.createSequentialGroup()
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-										.addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-												.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-												.addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+								.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+										.addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+												.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+												.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE))
 										.addGroup(layout.createSequentialGroup()
-												.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+												.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 														.addGroup(layout.createSequentialGroup()
 																.addGap(26, 26, 26)
 																.addComponent(jLabel1))
 														.addGroup(layout.createSequentialGroup()
 																.addGap(43, 43, 43)
-																.addComponent(itemCat, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+																.addComponent(itemCat, GroupLayout.PREFERRED_SIZE, 187, GroupLayout.PREFERRED_SIZE)
 																.addGap(43, 43, 43)
-																.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-																		.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+																.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+																		.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 283, GroupLayout.PREFERRED_SIZE)
 																		.addComponent(jLabel2))))
 												.addGap(0, 74, Short.MAX_VALUE)))
 								.addContainerGap())
 						.addGroup(layout.createSequentialGroup()
 								.addGap(287, 287, 287)
-								.addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-								.addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-								.addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+								.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 99, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+								.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, 119, GroupLayout.PREFERRED_SIZE)
+								.addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
 		);
 		layout.setVerticalGroup(
-				layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+				layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 						.addGroup(layout.createSequentialGroup()
 								.addGap(23, 23, 23)
 								.addComponent(jLabel1)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+								.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
 										.addGroup(layout.createSequentialGroup()
 												.addGap(34, 34, 34)
-												.addComponent(itemCat, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+												.addComponent(itemCat, GroupLayout.PREFERRED_SIZE, 37, GroupLayout.PREFERRED_SIZE))
 										.addGroup(layout.createSequentialGroup()
 												.addGap(26, 26, 26)
 												.addComponent(jLabel2)
-												.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-												.addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)))
+												.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+												.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 228, GroupLayout.PREFERRED_SIZE)))
 								.addGap(18, 18, 18)
-								.addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-										.addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-										.addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
-								.addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+								.addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+										.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+										.addComponent(jTextField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+								.addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+								.addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 57, GroupLayout.PREFERRED_SIZE)
 								.addContainerGap())
 		);
 		
-		jButton1.addActionListener((event) -> editItemEvent(event));
+		jButton1.addActionListener(this::editItemEvent);
 		pack();
 		
 		
@@ -118,20 +129,24 @@ public class EditItem extends javax.swing.JFrame {
 			ItemEvent event = new ItemEvent(itemCat, 0, categoryItems.get(0), ItemEvent.SELECTED);
 			categoryChanged(event);
 		}
+		
+		itemList.addListSelectionListener((e) -> {
+			Item item = itemList.getSelectedValue();
+			jTextField1.setText(Float.toString(item.getCost()));
+		});
 	}
 	
 	private void categoryChanged(ItemEvent event) {
 		if (event.getStateChange() == ItemEvent.SELECTED) {
-			ComboHelper.ComboItem category = (ComboHelper.ComboItem) event.getItem();
+			Category category = (Category) event.getItem();
 			
-			Vector<ComboHelper.ComboItem> items = Models.getInstance()
+			Vector<Item> items = Models.getInstance()
 					.getItems().stream()
-					.filter((item) -> item.getCatId() == category.getId())
-					.map(item -> new ComboHelper.ComboItem(item.getItemId(), item.getName()))
+					.filter((item) -> item.getCatId() == category.getCatId())
 					.collect(Collectors.toCollection(Vector::new));
 			
 			itemModel = new DefaultListModel<>();
-			for (ComboHelper.ComboItem item : items) {
+			for (Item item : items) {
 				itemModel.addElement(item);
 			}
 			itemList.setModel(itemModel);
@@ -147,25 +162,11 @@ public class EditItem extends javax.swing.JFrame {
 			} catch (Exception e) {
 				throw new Exception("Invalid Cost");
 			}
-			ComboHelper.ComboItem item = itemModel.get(index);
-			itemController.updateItem(item.getId(), cost);
+			Item item = itemModel.get(index);
+			itemController.updateItem(item.getItemId(), cost);
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, e.getMessage());
 		}
 		Models.getInstance().init();
 	}
-	
-	private javax.swing.JButton jButton1;
-	private javax.swing.JComboBox itemCat;
-	private javax.swing.JLabel jLabel1;
-	private javax.swing.JLabel jLabel2;
-	private javax.swing.JLabel jLabel3;
-	private javax.swing.JList itemList;
-	private javax.swing.JScrollPane jScrollPane1;
-	private javax.swing.JTextField jTextField1;
-	
-	private Vector<ComboHelper.ComboItem> categoryItems;
-	private DefaultListModel<ComboHelper.ComboItem> itemModel;
-	
-	private ItemController itemController;
 }
