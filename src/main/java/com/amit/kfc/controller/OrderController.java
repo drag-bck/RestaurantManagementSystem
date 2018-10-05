@@ -1,7 +1,6 @@
 package com.amit.kfc.controller;
 
 import com.amit.kfc.model.Order;
-import com.amit.kfc.model.SaleType;
 import com.amit.kfc.utils.ModelHelper;
 
 import java.sql.Date;
@@ -13,11 +12,11 @@ public class OrderController {
 		return Models.getInstance().getOrders();
 	}
 	
-	public void addOrder(String customerName, String customerPhone, int sellerId, String saleType, float amount) throws Exception {
-		addOrder(new java.sql.Date(System.currentTimeMillis()), customerName, customerPhone, sellerId, saleType, amount);
+	public void addOrder(String customerName, String customerPhone, int sellerId, float amount) throws Exception {
+		addOrder(new java.sql.Date(System.currentTimeMillis()), customerName, customerPhone, sellerId, amount);
 	}
 	
-	public void addOrder(Date date, String customerName, String customerPhone, int sellerId, String saleType, float amount) throws Exception {
+	public void addOrder(Date date, String customerName, String customerPhone, int sellerId, float amount) throws Exception {
 		if (customerName == null)
 			throw new Exception("Customer Name cannot be empty!");
 		customerName = customerName.trim();
@@ -28,8 +27,6 @@ public class OrderController {
 		customerPhone = customerPhone.trim();
 		if (customerPhone.length() != 10)
 			throw new Exception("10 digit Phone Number Required");
-		
-		SaleType tSaleType = SaleType.parse(saleType);
 		if (amount <= 0)
 			throw new Exception("Invalid Amount");
 		
@@ -41,7 +38,6 @@ public class OrderController {
 		order.setCustomerName(customerName);
 		order.setCustomerPhone(customerPhone);
 		order.setSellerId(sellerId);
-		order.setSaleType(tSaleType);
 		order.setAmount(amount);
 		
 		PreparedStatement query = order.getWriteQuery(Database.getConnection());

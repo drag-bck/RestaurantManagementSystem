@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Vector;
 
 import static com.amit.kfc.model.Cols.*;
 
@@ -13,8 +14,7 @@ public class Order extends BaseModel {
 	private String customerName;
 	private String customerPhone;
 	private int sellerId;
-	private SaleType saleType;
-	private float amount;
+	private double amount;
 	
 	public int getOrderId() {
 		return orderId;
@@ -56,19 +56,11 @@ public class Order extends BaseModel {
 		this.sellerId = sellerId;
 	}
 	
-	public SaleType getSaleType() {
-		return saleType;
-	}
-	
-	public void setSaleType(SaleType saleType) {
-		this.saleType = saleType;
-	}
-	
-	public float getAmount() {
+	public double getAmount() {
 		return amount;
 	}
 	
-	public void setAmount(float amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	
@@ -79,8 +71,7 @@ public class Order extends BaseModel {
 			this.setCustomerName(resultSet.getString(ORDER_CUSTOMER_NAME));
 			this.setCustomerPhone(resultSet.getString(ORDER_CUSTOMER_PHONE));
 			this.setSellerId(resultSet.getInt(ORDER_SELLER_ID));
-			this.setSaleType(SaleType.parse(resultSet.getInt(ORDER_SALE_TYPE)));
-			this.setAmount(resultSet.getFloat(ORDER_AMOUNT));
+			this.setAmount(resultSet.getDouble(ORDER_AMOUNT));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -95,7 +86,6 @@ public class Order extends BaseModel {
 				+ ORDER_CUSTOMER_NAME + " text, "
 				+ ORDER_CUSTOMER_PHONE + " text, "
 				+ ORDER_SELLER_ID + " integer, "
-				+ ORDER_SALE_TYPE + " integer, "
 				+ ORDER_AMOUNT + " real);";
 	}
 	
@@ -107,7 +97,6 @@ public class Order extends BaseModel {
 				+ ORDER_CUSTOMER_NAME + ", "
 				+ ORDER_CUSTOMER_PHONE + ", "
 				+ ORDER_SELLER_ID + ", "
-				+ ORDER_SALE_TYPE + ", "
 				+ ORDER_AMOUNT
 				+ " FROM "
 				+ ORDER_TABLE + ";";
@@ -122,9 +111,8 @@ public class Order extends BaseModel {
 				+ ORDER_CUSTOMER_NAME + ", "
 				+ ORDER_CUSTOMER_PHONE + ", "
 				+ ORDER_SELLER_ID + ", "
-				+ ORDER_SALE_TYPE + ", "
 				+ ORDER_AMOUNT + ", "
-				+ ") VALUES (?, ?, ?, ?, ?, ?, ?);";
+				+ ") VALUES (?, ?, ?, ?, ?, ?);";
 		
 		PreparedStatement statement = connection.prepareStatement(query);
 		statement.setInt(1, getOrderId());
@@ -132,8 +120,7 @@ public class Order extends BaseModel {
 		statement.setString(3, getCustomerName());
 		statement.setString(4, getCustomerPhone());
 		statement.setInt(5, getSellerId());
-		statement.setInt(6, saleType.getValue());
-		statement.setFloat(7, getAmount());
+		statement.setDouble(6, getAmount());
 		
 		return statement;
 	}
@@ -146,5 +133,19 @@ public class Order extends BaseModel {
 	@Override
 	public PreparedStatement getDeleteStatement(Connection connection) throws Exception {
 		return null;
+	}
+	
+	@Override
+	public String toString() {
+		return Integer.toString(getOrderId());
+	}
+	
+	public Vector<String> toStringVector() {
+		Vector<String> data = new Vector<>();
+		data.add(getOrderId() > 0 ? Integer.toString(getOrderId()) : "");
+		data.add(customerName);
+		data.add(customerPhone);
+		data.add(Double.toString(amount));
+		return data;
 	}
 }

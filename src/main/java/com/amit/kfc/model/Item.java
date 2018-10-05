@@ -123,4 +123,9 @@ public class Item extends BaseModel {
 		
 		return statement;
 	}
+	
+	@Override
+	public String toString() {
+		return getName();
+	}
 }

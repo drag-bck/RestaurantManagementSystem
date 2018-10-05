@@ -15,7 +15,6 @@ public class Cols {
 	public static String SELLER_TABLE = "sellers";
 	public static String SELLER_ID = "sellerId";
 	public static String SELLER_NAME = "name";
-	public static String SELLER_SALE_TYPE = "saleType";
 	public static String SELLER_RATE = "rate";
 	
 	public static String ORDER_TABLE = "orders";
@@ -24,7 +23,6 @@ public class Cols {
 	public static String ORDER_CUSTOMER_NAME = "name";
 	public static String ORDER_CUSTOMER_PHONE = "phone";
 	public static String ORDER_SELLER_ID = "sellerId";
-	public static String ORDER_SALE_TYPE = "saleType";
 	public static String ORDER_AMOUNT = "amount";
 	
 	public static String CATEGORY_TABLE = "categories";

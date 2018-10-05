@@ -19,10 +19,8 @@ public class EditItem extends javax.swing.JFrame {
 				.getCategories().stream()
 				.map(category -> new ComboHelper.ComboItem(category.getCatId(), category.getName()))
 				.collect(Collectors.toCollection(Vector::new));
-		categoryItems.add(new ComboHelper.ComboItem(1, "Starters"));
-		categoryItems.add(new ComboHelper.ComboItem(2, "Non Veg Starters"));
-		itemController = new ItemController();
 		
+		itemController = new ItemController();
 		initComponents();
 	}
 	

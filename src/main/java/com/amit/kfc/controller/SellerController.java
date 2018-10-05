@@ -1,6 +1,5 @@
 package com.amit.kfc.controller;
 
-import com.amit.kfc.model.SaleType;
 import com.amit.kfc.model.Seller;
 import com.amit.kfc.utils.ModelHelper;
 
@@ -13,7 +12,7 @@ public class SellerController {
 		return Models.getInstance().getSellers();
 	}
 	
-	public void addSeller(String saleType, String name, float rate) throws Exception {
+	public void addSeller(String name, float rate) throws Exception {
 		if (name == null)
 			throw new Exception("Seller Name cannot be Empty");
 		
@@ -24,13 +23,11 @@ public class SellerController {
 		if (rate < 0 || rate > 100)
 			throw new Exception("Invalid Rate");
 		
-		SaleType sellerSaleType = SaleType.parse(saleType);
 		int id = getSellers().isEmpty() ? 1 : getSellers().get(getSellers().size() - 1).getSellerId() + 1;
 		
 		Seller seller = new Seller();
 		seller.setSellerId(id);
 		seller.setName(name);
-		seller.setSaleType(sellerSaleType);
 		seller.setRate(rate);
 		
 		PreparedStatement query = seller.getWriteQuery(Database.getConnection());

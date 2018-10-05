@@ -9,6 +9,11 @@ sourceCompatibility = 1.8
 repositories {
     mavenCentral()
 }
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
@@ -21,5 +26,7 @@ dependencies {
 
     // https://mvnrepository.com/artifact/commons-codec/commons-codec
     compile group: 'commons-codec', name: 'commons-codec', version: '1.11'
+
+    compile (name:'jSuggestField', ext:'jar')
 
 }
