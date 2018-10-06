@@ -12,11 +12,11 @@ public class OrderController {
 		return Models.getInstance().getOrders();
 	}
 	
-	public void addOrder(String customerName, String customerPhone, int sellerId, float amount) throws Exception {
+	public void addOrder(String customerName, String customerPhone, int sellerId, double amount) throws Exception {
 		addOrder(new java.sql.Date(System.currentTimeMillis()), customerName, customerPhone, sellerId, amount);
 	}
 	
-	public void addOrder(Date date, String customerName, String customerPhone, int sellerId, float amount) throws Exception {
+	public void addOrder(Date date, String customerName, String customerPhone, int sellerId, double amount) throws Exception {
 		if (customerName == null)
 			throw new Exception("Customer Name cannot be empty!");
 		customerName = customerName.trim();
