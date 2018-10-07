@@ -93,7 +93,7 @@ class MenuPage extends javax.swing.JFrame {
 		String action = event.getActionCommand();
 		switch (action) {
 			case "TAKE_ORDER":
-				//Todo:Implement
+				new TakeOrder().setVisible(true);
 				break;
 			case "ORDER_HISTORY":
 				new OrderHistory().setVisible(true);
