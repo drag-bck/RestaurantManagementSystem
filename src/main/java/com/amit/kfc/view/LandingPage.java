@@ -74,9 +74,8 @@ public class LandingPage extends JFrame {
 		jPanel1.add(jLabel4);
 		jLabel4.setBounds(170, 320, 120, 50);
 		
-		
-		URL resource = LandingPage.class.getResource("/logo.jpg");
-		jLabel1.setIcon(new ImageIcon(resource.getPath())); // NOI18N
+		URL resource = ClassLoader.getSystemResource("logo.jpg");
+		jLabel1.setIcon(new ImageIcon(resource)); // NOI18N
 		jLabel1.setText("jLabel1");
 		jPanel1.add(jLabel1);
 		jLabel1.setBounds(0, 0, 640, 480);

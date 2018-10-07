@@ -3,9 +3,7 @@ package com.amit.kfc.controller;
 import com.amit.kfc.model.Category;
 import com.amit.kfc.model.Item;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class InitDB {
 	private static InitDB instance = null;
@@ -33,14 +31,14 @@ public class InitDB {
 	}
 	
 	private void readCategories() {
-		String csvFile = InitDB.class.getResource("/dataset/ItemCat.csv").getPath();
+		InputStream csvFile = ClassLoader.getSystemResourceAsStream("dataset/ItemCat.csv");
 		BufferedReader br = null;
 		String line;
 		String cvsSplitBy = "\\|";
 		
 		try {
 			
-			br = new BufferedReader(new FileReader(csvFile));
+			br = new BufferedReader(new InputStreamReader(csvFile));
 			while ((line = br.readLine()) != null) {
 				String[] tokens = line.split(cvsSplitBy);
 				categoryController.addCategory(new Category(tokens[0], tokens[1]));
@@ -60,14 +58,14 @@ public class InitDB {
 	}
 	
 	private void readItems() {
-		String csvFile = InitDB.class.getResource("/dataset/Items.csv").getPath();
+		InputStream csvFile = ClassLoader.getSystemResourceAsStream("dataset/Items.csv");
 		BufferedReader br = null;
 		String line;
 		String cvsSplitBy = "\\|";
 		
 		try {
 			
-			br = new BufferedReader(new FileReader(csvFile));
+			br = new BufferedReader(new InputStreamReader(csvFile));
 			while ((line = br.readLine()) != null) {
 				String[] tokens = line.split(cvsSplitBy);
 				itemController.addItem(new Item(tokens[0], tokens[1], tokens[2]));

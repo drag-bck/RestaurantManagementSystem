@@ -2,15 +2,14 @@ package com.amit.kfc.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class Database {
-	private static final String dbUrl = "jdbc:sqlite:d://sqlite/db/test.db";
+	private static final String dbUrl = "jdbc:sqlite:" + System.getProperty("user.home") + "\\kfc.db";
 	
 	public static Connection getConnection() {
 		try {
 			return DriverManager.getConnection(dbUrl);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return null;
