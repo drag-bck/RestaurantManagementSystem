@@ -55,7 +55,7 @@ public class TakeOrder extends JFrame {
 		jTable1 = new JTable();
 		addItem = new JButton();
 		
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setMaximumSize(new java.awt.Dimension(1280, 720));
 		setMinimumSize(new java.awt.Dimension(1280, 720));
 		setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -91,6 +91,7 @@ public class TakeOrder extends JFrame {
 		quantity.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 		
 		seller.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+
 		
 		jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 		jLabel6.setText("Item Category");
@@ -294,6 +295,16 @@ public class TakeOrder extends JFrame {
 			}
 		}
 	}
+
+	//-----Amit start
+
+
+
+
+
+
+
+	//---------Amit End
 	
 	private void addItem(ActionEvent event) {
 		try {

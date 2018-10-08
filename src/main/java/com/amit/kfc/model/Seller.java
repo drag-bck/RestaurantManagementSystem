@@ -10,7 +10,15 @@ public class Seller extends BaseModel {
 	private int sellerId;
 	private String name;
 	private float rate;
-	
+
+	public Seller() {
+
+	}
+	public Seller(String tokens0, String tokens1){
+		name = tokens0;
+		rate = Float.parseFloat(tokens1);
+	}
+
 	public int getSellerId() {
 		return sellerId;
 	}

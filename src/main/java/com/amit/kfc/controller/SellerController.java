@@ -36,4 +36,12 @@ public class SellerController {
 		
 		getSellers().add(seller);
 	}
+
+	public void addSeller(Seller seller) throws Exception {
+		PreparedStatement query = seller.getWriteQuery(Database.getConnection());
+		if (!ModelHelper.executeQuery(query))
+			throw new Exception("Seller creation Failed!");
+
+		getSellers().add(seller);
+	}
 }

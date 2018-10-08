@@ -2,6 +2,7 @@ package com.amit.kfc.controller;
 
 import com.amit.kfc.model.Category;
 import com.amit.kfc.model.Item;
+import com.amit.kfc.model.Seller;
 
 import java.io.*;
 
@@ -10,10 +11,13 @@ public class InitDB {
 	
 	private CategoryController categoryController;
 	private ItemController itemController;
+	private SellerController sellerController;
+
 	
 	private InitDB() {
 		categoryController = new CategoryController();
 		itemController = new ItemController();
+		sellerController =new SellerController();
 	}
 	
 	public static InitDB getInstance() {
@@ -27,6 +31,7 @@ public class InitDB {
 		if (Models.getInstance().getCategories().isEmpty()) {
 			readCategories();
 			readItems();
+			readSellers();
 		}
 	}
 	
@@ -83,4 +88,33 @@ public class InitDB {
 			}
 		}
 	}
+
+
+	private void readSellers() {
+		InputStream csvFile = ClassLoader.getSystemResourceAsStream("dataset/Seller.csv");
+		BufferedReader br = null;
+		String line;
+		String cvsSplitBy = "\\|";
+
+		try {
+
+			br = new BufferedReader(new InputStreamReader(csvFile));
+			while ((line = br.readLine()) != null) {
+				String[] tokens = line.split(cvsSplitBy);
+				sellerController.addSeller(new Seller(tokens[0], tokens[1]));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
 }

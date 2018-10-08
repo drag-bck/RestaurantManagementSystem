@@ -23,14 +23,17 @@ class GenerateBill extends JFrame {
 	private JComboBox sellerName;
 	private JDateChooser startDate;
 	
-	GenerateBill() {
+	public GenerateBill() {
 		initComponents();
 		
+
 		ArrayList<Seller> sellers = Models.getInstance().getSellers();
+		/*
 		Seller seller = new Seller();
-		seller.setName("Zomato");
+		seller.setName("Zomato-Prepaid");
 		seller.setSellerId(1);
 		sellers.add(seller);
+		*/
 		sellerName.setModel(new DefaultComboBoxModel(sellers.toArray()));
 	}
 	
