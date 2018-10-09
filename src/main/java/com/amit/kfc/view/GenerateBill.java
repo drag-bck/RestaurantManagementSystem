@@ -28,12 +28,6 @@ class GenerateBill extends JFrame {
 		
 
 		ArrayList<Seller> sellers = Models.getInstance().getSellers();
-		/*
-		Seller seller = new Seller();
-		seller.setName("Zomato-Prepaid");
-		seller.setSellerId(1);
-		sellers.add(seller);
-		*/
 		sellerName.setModel(new DefaultComboBoxModel(sellers.toArray()));
 	}
 	

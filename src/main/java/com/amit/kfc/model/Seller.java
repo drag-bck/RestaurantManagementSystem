@@ -15,7 +15,7 @@ public class Seller extends BaseModel {
 
 	}
 	public Seller(String tokens0, String tokens1){
-		name = tokens0;
+		this.name = tokens0;
 		rate = Float.parseFloat(tokens1);
 	}
 
@@ -57,7 +57,7 @@ public class Seller extends BaseModel {
 	public String getInitQuery() {
 		return "CREATE TABLE IF NOT EXISTS "
 				+ SELLER_TABLE + "("
-				+ SELLER_ID + " integer PRIMARY KEY, "
+				+ SELLER_ID + " integer PRIMARY KEY AUTOINCREMENT, "
 				+ SELLER_NAME + " text, "
 				+ SELLER_RATE + " real);";
 	}
@@ -76,15 +76,17 @@ public class Seller extends BaseModel {
 	public PreparedStatement getWriteQuery(Connection connection) throws Exception {
 		String query = "INSERT INTO "
 				+ SELLER_TABLE + " ("
-				+ SELLER_ID + ", "
 				+ SELLER_NAME + ", "
 				+ SELLER_RATE
-				+ ") VALUES (?, ?, ?, ?);";
-		
+				+ ") VALUES (?, ?);";
+
+		int id=getSellerId()+1;
+
 		PreparedStatement statement = connection.prepareStatement(query);
-		statement.setInt(1, getSellerId());
-		statement.setString(2, getName());
-		statement.setFloat(3, getRate());
+		//statement.setInt(1, getSellerId());
+		statement.setInt(1,id);
+		statement.setString(1, getName());
+		statement.setFloat(2, getRate());
 		
 		return statement;
 	}

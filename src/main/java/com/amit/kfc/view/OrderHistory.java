@@ -24,13 +24,13 @@ class OrderHistory extends JFrame {
 				.collect(Collectors.summarizingDouble(Order::getAmount)).getSum());
 		data.add(total.toStringVector());
 		
-		Vector<String> columnNames = new Vector<>(Arrays.asList("Order Id", "Customer", "Phone", "Amount"));
+		Vector<String> columnNames = new Vector<>(Arrays.asList("Order Id", "Customer", "Phone", "Seller", "Amount"));
 		
 		this.setTitle("Order Summary");
 		
 		JTable table = new JTable(data, columnNames);
 		JScrollPane scrollPane = new JScrollPane(table);
 		this.add(scrollPane);
-		this.setSize(600, 300);
+		this.setSize(800, 500);
 	}
 }

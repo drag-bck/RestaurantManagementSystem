@@ -111,7 +111,7 @@ public class Order extends BaseModel {
 				+ ORDER_CUSTOMER_NAME + ", "
 				+ ORDER_CUSTOMER_PHONE + ", "
 				+ ORDER_SELLER_ID + ", "
-				+ ORDER_AMOUNT + ", "
+				+ ORDER_AMOUNT
 				+ ") VALUES (?, ?, ?, ?, ?, ?);";
 		
 		PreparedStatement statement = connection.prepareStatement(query);
@@ -145,6 +145,30 @@ public class Order extends BaseModel {
 		data.add(getOrderId() > 0 ? Integer.toString(getOrderId()) : "");
 		data.add(customerName);
 		data.add(customerPhone);
+		if(getSellerId()==1)
+		{
+			data.add("Zomato-Prepaid");
+		}
+		else if(getSellerId()==2)
+		{
+			data.add("Zomato-Postpaid");
+		}
+		else if(getSellerId()==3)
+		{
+			data.add("Uber Eats-Prepaid");
+		}
+		else if(getSellerId()==4)
+		{
+			data.add("Swiggy-Prepaid");
+		}
+		else if(getSellerId()==5)
+		{
+			data.add("Pani Foods-Prepaid");
+		}
+		else if(getSellerId()==6)
+		{
+			data.add("Foodsome-Prepaid");
+		}
 		data.add(Double.toString(amount));
 		return data;
 	}

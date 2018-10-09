@@ -100,7 +100,7 @@ public class TakeOrder extends JFrame {
 		jLabel7.setText("Items");
 		
 		jLabel8.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-		jLabel8.setText("ORDER");
+		jLabel8.setText("");
 		
 		jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
 		jLabel9.setText("Total");
