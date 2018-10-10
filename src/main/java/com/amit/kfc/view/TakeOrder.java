@@ -296,15 +296,6 @@ public class TakeOrder extends JFrame {
 		}
 	}
 
-	//-----Amit start
-
-
-
-
-
-
-
-	//---------Amit End
 	
 	private void addItem(ActionEvent event) {
 		try {

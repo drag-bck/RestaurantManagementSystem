@@ -163,11 +163,11 @@ public class Order extends BaseModel {
 		}
 		else if(getSellerId()==5)
 		{
-			data.add("Pani Foods-Prepaid");
+			data.add("Pani Food-Prepaid");
 		}
 		else if(getSellerId()==6)
 		{
-			data.add("Foodsome-Prepaid");
+			data.add("Foodsome");
 		}
 		data.add(Double.toString(amount));
 		return data;

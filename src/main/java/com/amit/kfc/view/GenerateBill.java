@@ -1,5 +1,7 @@
 package com.amit.kfc.view;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import com.amit.kfc.controller.Models;
 import com.amit.kfc.model.Order;
 import com.amit.kfc.model.Seller;
@@ -7,10 +9,7 @@ import com.toedter.calendar.JDateChooser;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.Vector;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class GenerateBill extends JFrame {
@@ -123,10 +122,9 @@ class GenerateBill extends JFrame {
 	private void generateBillActionPerformed(ActionEvent event) {
 		try {
 			Seller seller = (Seller) sellerName.getSelectedItem();
-			
 			java.sql.Date orderStartDate = dateToSqlDate(startDate.getDate());
 			java.sql.Date orderEndDate = dateToSqlDate(endDate.getDate());
-			
+
 			ArrayList<Order> orders = Models.getInstance()
 					.getOrders().stream()
 					.filter((order -> (order.getSellerId() == seller.getSellerId() &&
